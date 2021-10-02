@@ -1,0 +1,8 @@
+{
+  "/api/*": {
+      "target": "https://blibli.com/backend/search/products?",
+      "secure": false,
+      "logLevel": "debug",
+      "changeOrigin": true
+  }
+}

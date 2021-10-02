@@ -1,0 +1,46 @@
+<div>
+    <mat-paginator (page)="handlePageEvent($event)" showFirstLastButtons="false" [length]="length" [pageSize]="24" aria-label="Select page">
+    </mat-paginator>
+    <div style="overflow-y: auto; height: 72vh;">
+        <div *ngIf="resp && resp.data && resp.data.products">
+
+            <div *ngFor="let item of resp.data.products">
+                <mat-card fxFlex fxLayout="row" fxLayoutAlign="space-around center">
+                    <mat-card-header>
+                        <mat-card-title>
+                            <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px">
+                                <p style="width: 15vw;"><b>{{item.name}}</b></p>
+                                <p style="color: orange; font-size: 1.1rem;">{{item.price.priceDisplay}}</p>
+                                <div fxLayout="row">
+                                    <p style="font-size: 0.7rem; text-decoration: line-through;">
+                                        {{item.price.strikeThroughPriceDisplay}}</p>&nbsp;
+                                    <p style="font-size: 1.1rem; color: red">{{item.price.discount}}%</p>
+                                </div>
+                            </div>
+                            <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="5px">
+                                <mat-icon style="color: gold;">star_outline</mat-icon>
+                                <span>{{item.review.absoluteRating}}&nbsp;({{item.review.count}})</span>
+                            </div>
+                            <div>
+                                <button mat-raised-button color="primary" (click)="alert()">Add to Cart</button>
+                            </div>
+
+                        </mat-card-title>
+                    </mat-card-header>
+
+                    <mat-card-content style="width: 30vw !important; height: 40vh !important; padding: 2rem;"
+                        fxLayout="column">
+                        <mat-carousel maxWidth="25vw" proportion="50" [loop]="true" [hideArrows]="true"
+                            [hideIndicators]="false" [useKeyboard]="true" [useMouseWheel]="false" orientation="ltr"
+                            timings="200ms ease-in" [autoplay]="true" interval="6000" color="white">
+                            <mat-carousel-slide *ngFor="let slide of item.images; let i = index" [image]="slide"
+                                [hideOverlay]="true"></mat-carousel-slide>
+                        </mat-carousel>
+                    </mat-card-content>
+                </mat-card>
+
+            </div>
+        </div>
+
+    </div>
+</div>

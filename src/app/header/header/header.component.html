@@ -1,0 +1,28 @@
+<p>
+    <mat-toolbar fxLayoutAlign="space-between" color="primary">
+        <button mat-icon-button (click)="navBack()">
+            <mat-icon>arrow_back</mat-icon>
+        </button>
+        <span>
+            <mat-form-field class="example-form-field" appearance="" style="width: 50vw;" >
+                <button mat-icon-button (click)="search()">
+                    <mat-icon>search</mat-icon> 
+                </button>
+                               
+                <input matInput type="text" [(ngModel)]="value" >
+                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                    <mat-icon>close</mat-icon>
+                </button>
+            </mat-form-field>
+        </span>
+        <button mat-icon-button>
+            <mat-icon>grid_view</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon>shopping_bag</mat-icon>
+        </button>
+        <button mat-icon-button (click)="navToHome()">
+            <mat-icon>home</mat-icon>
+        </button>
+    </mat-toolbar>
+</p>

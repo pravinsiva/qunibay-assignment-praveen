@@ -18,7 +18,7 @@ export class HttpService {
     // this.headers.append('Access-Control-Allow-Methods', 'GET, DELETE, HEAD, OPTIONS');
     // this.headers.append('X-Requested-With', 'XMLHttpRequest');
    }
-    url = 'https://www.blibli.com/backend/search/products?';
+    url = 'backend/search/products?';
   getList(searchTerm,start): Observable<any> {
     const headers= new HttpHeaders()
   .set('content-type', 'application/json')

@@ -1,6 +1,6 @@
 {
-  "/api/*": {
-      "target": "https://blibli.com/backend/search/products?",
+  "/backend/*": {
+      "target": "https://blibli.com/",
       "secure": false,
       "logLevel": "debug",
       "changeOrigin": true

@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit, OnDestroy {
    }
 
    getData(search, page) {
-      this.subsArr.push(this.httpService.getList('samsung', page).subscribe((resp) => {
+      this.subsArr.push(this.httpService.getList(search, page).subscribe((resp) => {
          this.resp = resp;
          this.pageItem = this.resp.data.paging
          this.length = this.pageItem.total_item

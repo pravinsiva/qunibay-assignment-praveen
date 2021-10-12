@@ -1,28 +1,32 @@
 <p>
-    <mat-toolbar fxLayoutAlign="space-between" color="primary">
-        <button mat-icon-button (click)="navBack()">
-            <mat-icon>arrow_back</mat-icon>
-        </button>
-        <span>
-            <mat-form-field class="example-form-field" appearance="" style="width: 50vw;" >
-                <button mat-icon-button (click)="search()">
-                    <mat-icon>search</mat-icon> 
+    <mat-toolbar fxLayoutGap="1rem" color="primary">
+        <h1 class="shadow">BliBli.com</h1>
+        <div fxLayoutAlign="space-between">
+            <div class="pad-field">
+                <mat-form-field class="example-form-field" style="width: 50vw;">
+                    <button mat-icon-button class="search" (click)="search()">
+                        <mat-icon>search</mat-icon> 
+                    </button>
+                                   
+                    <input matInput type="text" [(ngModel)]="value" >
+                    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </mat-form-field>
+            </div>
+            <div class="padding">
+                <button class="grid" mat-icon-button>
+                    <mat-icon>grid_view</mat-icon>
                 </button>
-                               
-                <input matInput type="text" [(ngModel)]="value" >
-                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                    <mat-icon>close</mat-icon>
+                <button class="bag" mat-icon-button>
+                    <mat-icon>shopping_bag</mat-icon>
                 </button>
-            </mat-form-field>
-        </span>
-        <button mat-icon-button>
-            <mat-icon>grid_view</mat-icon>
-        </button>
-        <button mat-icon-button>
-            <mat-icon>shopping_bag</mat-icon>
-        </button>
-        <button mat-icon-button (click)="navToHome()">
-            <mat-icon>home</mat-icon>
-        </button>
+                <button class="home" mat-icon-button (click)="navToHome()">
+                    <mat-icon>home</mat-icon>
+                </button>
+            </div>
+        </div>
+       
+        
     </mat-toolbar>
 </p>
